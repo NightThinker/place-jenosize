@@ -6,6 +6,8 @@ import { useEffect } from 'react';
 import Card from '@/components/Card';
 
 import { getPlaces } from '@/services/place';
+import { mockPlace } from '@/constants/mock';
+import { PlaceData } from '@/interface/place';
 
 const Home: NextPage = () => {
     useEffect(() => {
@@ -27,7 +29,11 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Layout>
-                <Card />
+                <div className="grid gap-6">
+                    {mockPlace.map((place: PlaceData) => (
+                        <Card key={place.title} data={place} />
+                    ))}
+                </div>
             </Layout>
         </div>
     );
