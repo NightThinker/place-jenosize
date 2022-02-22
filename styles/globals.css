@@ -16,4 +16,12 @@
     * {
         box-sizing: border-box;
     }
+
+    main {
+        width: 1024px;
+        margin: 0 auto;
+        height: calc(100vh - 160px);
+        padding: 20px 0;
+        overflow: auto;
+    }
 }
