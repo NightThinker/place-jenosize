@@ -1,12 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Layout from '@/theme/Layout';
+import { useEffect } from 'react';
+import Card from '@/components/Card';
 
-import Layout from '@/Layout';
+import { getPlaces } from '@/services/place';
 
 const Home: NextPage = () => {
+    useEffect(() => {
+        (async () => {
+            try {
+                const res = await getPlaces();
+                console.log('res', res);
+                if (res.status === 200 && res.statusText === 'OK') {
+                }
+            } catch (error) {}
+        })();
+    }, []);
+
     return (
         <div>
             <Head>
@@ -15,9 +27,7 @@ const Home: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Layout>
-                <h1 className="text-5xl">
-                    Welcome o <a href="https://nextjs.org">Next.js!</a>
-                </h1>
+                <Card />
             </Layout>
         </div>
     );

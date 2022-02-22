@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 const Header = () => {
     return (
-        <header className="flex justify-between border-b border-black h-24 px-5">
+        <header className="flex justify-between border-b border-black h-24 px-5 w-full">
             <div className="flex items-center">
                 <div className="w-16 h-16 border border-black">Logo</div>
                 <p className="text-4xl ml-8">Website Name</p>
